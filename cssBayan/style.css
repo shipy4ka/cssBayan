@@ -1,0 +1,117 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 65%;
+}
+
+body {
+    height: 101vh;
+    background-color: #fec0f0;
+    box-sizing: border-box;
+    font-family: 'Genos', sans-serif;
+    font-weight: 600;
+
+}
+
+.title {
+   color: #140110;
+   font-size: 5rem;
+   margin-bottom: 2rem;
+   padding-left: 1rem;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 60rem;
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+    align-items: center;
+    border-top: 0.15rem solid #ab148a;
+    color: #ac0287;
+}
+.item:hover {
+    cursor: pointer;
+    transition: all 0.5s;
+    color: #140110;
+}
+
+.input {
+    appearance: none;
+}
+
+.mem_title {
+    grid-column: 1 / 2;
+    font-size: 3rem;
+}
+
+.icon {
+    transform: rotate(0deg);
+    justify-self: end;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.item:hover .icon {
+    transform: rotate(90deg);
+}
+
+.wrapper:hover .icon {
+    opacity: 1;
+}
+
+.mem_content {
+    grid-column: 1 / -1;
+    justify-self: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    width: 90%;
+    max-height: 0;
+    transition: all 0.5s;
+}
+
+.item:hover .mem_content {
+    max-height: 100vh;
+}
+
+/*when input checked*/
+
+.input:checked ~ .icon {
+    transform: rotate(90deg);
+}
+.input:checked ~ .mem_content {
+    max-height: 100vh;
+}
+.input:checked ~ .mem_title {
+    color: #140110;
+}
+
+/*different fonts size*/
+
+@media only screen and (min-width: 820px) {
+    html {
+      font-size: 70%;
+    }
+
+    .mem_content {
+      width: 70%;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    html {
+      font-size: 80%;
+    }
+}
