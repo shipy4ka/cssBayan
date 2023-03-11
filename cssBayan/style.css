@@ -1,6 +1,4 @@
-*,
-*::before,
-*::after {
+* {
     margin: 0;
     padding: 0;
     box-sizing: inherit;
@@ -27,20 +25,20 @@ body {
 }
 
 .wrapper {
-    margin: 0 auto;
-    max-width: 60rem;
     display: flex;
     flex-direction: column;
+    margin: auto;
+    max-width: 60rem;
     padding-left: 1rem;
     padding-right: 1rem;
 }
 
 .item {
+    color: #ac0287;
     display: grid;
     grid-template-columns: 10fr 1fr;
     align-items: center;
     border-top: 0.15rem solid #ab148a;
-    color: #ac0287;
 }
 
 .input {
@@ -52,40 +50,37 @@ body {
     font-size: 1.5rem;
 }
 
-.icon {
-    transform: rotate(0deg);
-    height: 60%;
-    width: 60%;
-    justify-self: end;
-    opacity: 0;
-    transition: all 0.5s;
-}
-
-
-.mem_content {
-    grid-column: 1 / -1;
-    justify-self: center;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    width: 90%;
-    max-height: 0;
-    transition: all 0.5s;
-}
-
-
-/*when input checked*/
-
-.input:checked ~ .icon {
-    transform: rotate(90deg);
-}
-.input:checked ~ .mem_content {
-    max-height: 99%;
-}
 .input:checked ~ .mem_title {
     color: #140110;
 }
 
-/*different fonts size*/
+.icon {
+    transform: rotate(0deg);
+    height: 60%;
+    width: 60%;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.input:checked ~ .icon {
+    transform: rotate(90deg);
+}
+
+
+.mem_content {
+    width: 90%;
+    max-height: 0;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    grid-column: 1 / -1;
+    justify-self: center;
+    transition: all 0.5s;
+}
+
+.input:checked ~ .mem_content {
+    max-height: 99%;
+}
+
 
 @media only screen and (min-width: 425px) and (max-width: 1024px) {
     .title{
