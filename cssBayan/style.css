@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 65%;
+}
+
+body {
+    height: 101vh;
+    background-color: #fec0f0;
+    box-sizing: border-box;
+    font-family: 'Genos', sans-serif;
+    font-weight: 600;
+
+}
+
+.title {
+   color: #140110;
+   font-size: 2rem;
+   margin-bottom: 0.5rem;
+   padding-left: 1rem;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 60rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.item {
+    color: #ac0287;
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+    align-items: center;
+    border-top: 0.15rem solid #ab148a;
+}
+
+.input {
+    appearance: none;
+}
+
+.mem_title {
+    grid-column: 1 / 2;
+    font-size: 1.5rem;
+}
+
+.input:checked ~ .mem_title {
+    color: #140110;
+}
+
+.icon {
+    transform: rotate(0deg);
+    height: 60%;
+    width: 60%;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.input:checked ~ .icon {
+    transform: rotate(90deg);
+}
+
+
+.mem_content {
+    width: 90%;
+    max-height: 0;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    grid-column: 1 / -1;
+    justify-self: center;
+    transition: all 0.5s;
+}
+
+.input:checked ~ .mem_content {
+    max-height: 99%;
+}
+
+
+@media only screen and (min-width: 425px) and (max-width: 1024px) {
+    .title{
+      font-size: 4rem;
+      margin-bottom: 2rem;
+    }
+
+    .mem_title {
+        font-size: 2rem;
+    }
+
+    .icon {
+        height: 80%;
+        width: 80%;
+    }
+
+    .mem_content {
+      width: 70%;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .title{
+        font-size: 5rem;
+    }
+
+    .mem_title {
+        font-size: 3rem;
+    }
+
+    .icon {
+        height: 100%;
+        width: 100%;
+    }
+
+    .mem_content {
+        width: 60%;
+    }
+}
+
+@media (any-hover: hover) {
+    .item:hover {
+        cursor: pointer;
+        transition: all 0.5s;
+        color: #140110;
+    }
+
+    .item:hover .icon {
+        transform: rotate(90deg);
+    }
+
+    .wrapper:hover .icon {
+        opacity: 1;
+    }
+
+    .item:hover .mem_content {
+        max-height: 99%;
+    }
+}
